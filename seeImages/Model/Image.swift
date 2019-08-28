@@ -13,4 +13,5 @@ struct Image: Codable {
     let imageHeight: Int
     let imageSize: Int
     let tags: String
+    var date: String?
 }

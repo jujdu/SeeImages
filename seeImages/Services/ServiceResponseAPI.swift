@@ -15,11 +15,11 @@ class ServiceResponseAPI {
         func fireErrorCompletion(_ error: Error?) {
             completion(RecordingsResult(recordings: nil,
                                         error: error,
-                                        currentPage: 0)
+                                        currentPage: 0))
         }
         
         let parameters: Parameters = [
-            "apikey": API_KEY,
+            "key": API_KEY,
             "page": page
         ]
         
@@ -30,13 +30,15 @@ class ServiceResponseAPI {
                 return
             }
             
+            print(response)
+            
             guard let data = response.data else { return completion(nil) }
             let jsonDecoder = JSONDecoder()
             do {
                 let serviceResponse = try jsonDecoder.decode(ServiceResponse.self, from: data)
                 completion(RecordingsResult(recordings: serviceResponse.hits,
                                             error: nil,
-                                            currentPage: page)
+                                            currentPage: page))
             } catch {
                 debugPrint(error.localizedDescription)
                 fireErrorCompletion(error)

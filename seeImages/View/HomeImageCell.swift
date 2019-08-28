@@ -23,17 +23,27 @@ class HomeImageCell: UICollectionViewCell {
     func setupView(image: Image) {
         homeWightHeighLbl.text = "\(image.imageHeight) x \(image.imageWidth)"
         
-        guard let size = homeSizeLbl.text else { return }
+//        guard let size = homeSizeLbl.text else { return }
         //TODO: need fix
-        let bytesToMegabytes = ByteCountFormatter.string(fromByteCount: Int64(size)!,
-                                                         countStyle: .file)
-        homeSizeLbl.text = bytesToMegabytes
+//        let bytesToMegabytes = ByteCountFormatter.string(fromByteCount: Int64(size)!,
+//                                                         countStyle: .file)
+        homeSizeLbl.text = String(image.imageSize)
         
         if let url = URL(string: image.previewURL) {
             let placeholder = UIImage(named: AppImages.Placeholder)
             let options: KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
             homeImg.kf.indicatorType = .activity
+            
             homeImg.kf.setImage(with: url, placeholder: placeholder, options: options)
+//            homeImg.kf.setImage(with: url, placeholder: placeholder, options: options) { (result) in
+//                let currentDateTime = Date()
+//
+//                let formatter = DateFormatter()
+//                formatter.timeStyle = .medium
+//                formatter.dateStyle = .long
+//
+//                formatter.string(from: currentDateTime)
+//            }
         }
     }
 

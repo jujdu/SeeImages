@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeVC-->
+        <!--See Images-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="seeImages" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,16 +20,16 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zxw-uo-xlB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.89882087435214042" green="0.89882087435214042" blue="0.89882087435214042" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IBR-34-JAV">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7zd-Ao-hZv">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="10" y="10" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -48,29 +48,44 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2aR-Yb-gVO"/>
+                    <navigationItem key="navigationItem" title="See Images" id="2aR-Yb-gVO"/>
                     <connections>
-                        <segue destination="a02-fd-cjJ" kind="show" id="qrJ-lg-s1n"/>
+                        <outlet property="collectionView" destination="Zxw-uo-xlB" id="p0S-Hh-9L0"/>
+                        <segue destination="a02-fd-cjJ" kind="show" identifier="ToDetailImageVC" id="qrJ-lg-s1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="YT5-ax-hsw">
             <objects>
-                <viewController id="a02-fd-cjJ" sceneMemberID="viewController">
+                <viewController id="a02-fd-cjJ" customClass="DetailVC" customModule="seeImages" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="miJ-NY-FJT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="is0-OZ-RF0">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wDq-iB-dGZ" firstAttribute="bottom" secondItem="is0-OZ-RF0" secondAttribute="bottom" id="bM0-sr-rWQ"/>
+                            <constraint firstItem="wDq-iB-dGZ" firstAttribute="trailing" secondItem="is0-OZ-RF0" secondAttribute="trailing" id="gk8-p5-J9A"/>
+                            <constraint firstItem="is0-OZ-RF0" firstAttribute="leading" secondItem="wDq-iB-dGZ" secondAttribute="leading" id="lHG-Iu-kZe"/>
+                            <constraint firstItem="is0-OZ-RF0" firstAttribute="top" secondItem="wDq-iB-dGZ" secondAttribute="top" id="wfq-7i-sWn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wDq-iB-dGZ"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="is0-OZ-RF0" id="PDJ-rq-0Cq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kO8-IB-cyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="27"/>
+            <point key="canvasLocation" x="1760.8" y="26.53673163418291"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6dK-nw-7hf">
@@ -80,6 +95,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UbE-xq-U8M">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

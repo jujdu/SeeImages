@@ -16,10 +16,12 @@ typealias ServiceResponseCompletion = (RecordingsResult?) -> ()
 
 struct XibNames {
     static let HomeImageCell = "HomeImageCell"
+    static let DetailImageCell = "DetailImageCell"
 }
 
 struct Identifiers {
     static let HomeImageCell = "HomeImageCell"
+    static let DetailImageCell = "DetailImageCell"
 }
 
 struct Segues {
