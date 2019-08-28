@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6E200939CC64D2DBE0B526 /* Pods_seeImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F18B9FEB31151F3B9C5C43 /* Pods_seeImages.framework */; };
 		6F5FA5102316A29C0046EF99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5FA50F2316A29C0046EF99 /* AppDelegate.swift */; };
 		6F5FA5122316A29C0046EF99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5FA5112316A29C0046EF99 /* ViewController.swift */; };
 		6F5FA5152316A29C0046EF99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F5FA5132316A29C0046EF99 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48F18B9FEB31151F3B9C5C43 /* Pods_seeImages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_seeImages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EC398941E2D4B7ABC4F5495 /* Pods-seeImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seeImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-seeImages/Pods-seeImages.release.xcconfig"; sourceTree = "<group>"; };
 		6F5FA50C2316A29B0046EF99 /* seeImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seeImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F5FA50F2316A29C0046EF99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F5FA5112316A29C0046EF99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		6F5FA5192316A29E0046EF99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F5FA51B2316A29E0046EF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F5FA53F2316A5BB0046EF99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		C452591C38D2D24B0F9E891C /* Pods-seeImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seeImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seeImages/Pods-seeImages.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6E200939CC64D2DBE0B526 /* Pods_seeImages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064B48948F3785CFE22E0DEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48F18B9FEB31151F3B9C5C43 /* Pods_seeImages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6F5FA5032316A29B0046EF99 = {
 			isa = PBXGroup;
 			children = (
 				6F5FA50E2316A29B0046EF99 /* seeImages */,
 				6F5FA50D2316A29B0046EF99 /* Products */,
+				77C4F31DCBE26CE3567E2553 /* Pods */,
+				064B48948F3785CFE22E0DEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = seeImages;
 			sourceTree = "<group>";
 		};
+		77C4F31DCBE26CE3567E2553 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C452591C38D2D24B0F9E891C /* Pods-seeImages.debug.xcconfig */,
+				5EC398941E2D4B7ABC4F5495 /* Pods-seeImages.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F5FA51E2316A29E0046EF99 /* Build configuration list for PBXNativeTarget "seeImages" */;
 			buildPhases = (
+				692374A17CB1BDABEEE878C3 /* [CP] Check Pods Manifest.lock */,
 				6F5FA5082316A29B0046EF99 /* Sources */,
 				6F5FA5092316A29B0046EF99 /* Frameworks */,
 				6F5FA50A2316A29B0046EF99 /* Resources */,
+				DA86E7885BC7F7B694B9983E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +159,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		692374A17CB1BDABEEE878C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seeImages-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA86E7885BC7F7B694B9983E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-seeImages/Pods-seeImages-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seeImages/Pods-seeImages-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F5FA5082316A29B0046EF99 /* Sources */ = {
@@ -284,6 +351,7 @@
 		};
 		6F5FA51F2316A29E0046EF99 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C452591C38D2D24B0F9E891C /* Pods-seeImages.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +370,7 @@
 		};
 		6F5FA5202316A29E0046EF99 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EC398941E2D4B7ABC4F5495 /* Pods-seeImages.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
