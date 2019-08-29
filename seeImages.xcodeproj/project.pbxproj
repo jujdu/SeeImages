@@ -74,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				6F5FA50E2316A29B0046EF99 /* seeImages */,
+				6F5FA53F2316A5BB0046EF99 /* .gitignore */,
 				6F5FA50D2316A29B0046EF99 /* Products */,
 				77C4F31DCBE26CE3567E2553 /* Pods */,
 				064B48948F3785CFE22E0DEE /* Frameworks */,
@@ -101,7 +102,6 @@
 				6F5FA5162316A29E0046EF99 /* Assets.xcassets */,
 				6F5FA5182316A29E0046EF99 /* LaunchScreen.storyboard */,
 				6F5FA51B2316A29E0046EF99 /* Info.plist */,
-				6F5FA53F2316A5BB0046EF99 /* .gitignore */,
 			);
 			path = seeImages;
 			sourceTree = "<group>";
