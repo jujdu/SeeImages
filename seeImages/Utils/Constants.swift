@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 let URL_BASE = "https://pixabay.com/api/"
 let API_KEY = "13444563-94c316606a96f9ea0c34b1829"
 
-typealias ServiceResponseCompletion = (RecordingsResult?) -> ()
+typealias ServiceResponseCompletion = (List<Image>?) -> ()
 //typealias DetailFilmResponseCompletion = (DetailFilm?) -> ()
 
 struct XibNames {

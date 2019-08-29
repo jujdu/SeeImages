@@ -6,17 +6,16 @@
 //  Copyright © 2019 Michael Sidoruk. All rights reserved.
 //
 
-struct RecordingsResult {
-    let recordings: [Image]?
-    let error: Error?
-    let currentPage: Int
+struct PageCounter {
+
+    static var currentPage: Int = 1
     let maxPages: Int = 26
-    
-    var hasMorePages: Bool {
-        return currentPage < maxPages
+
+    static var hasMorePages: Bool {
+        return currentPage < 26
     }
-    
-    var nextPage: Int {
-        return hasMorePages ? currentPage + 1: currentPage
+
+    static var nextPage: Int {
+        return hasMorePages ? PageCounter.currentPage + 1: PageCounter.currentPage
     }
 }

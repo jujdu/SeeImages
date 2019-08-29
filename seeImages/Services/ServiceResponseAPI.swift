@@ -11,11 +11,9 @@ import Alamofire
 
 class ServiceResponseAPI {
     func getImages(page: Int, completion: @escaping ServiceResponseCompletion) {
-        
+
         func fireErrorCompletion(_ error: Error?) {
-            completion(RecordingsResult(recordings: nil,
-                                        error: error,
-                                        currentPage: 0))
+            completion(nil)
         }
         
         let parameters: Parameters = [
@@ -30,18 +28,16 @@ class ServiceResponseAPI {
                 return
             }
             
-            print(response)
-            
             guard let data = response.data else { return completion(nil) }
             let jsonDecoder = JSONDecoder()
             do {
                 let serviceResponse = try jsonDecoder.decode(ServiceResponse.self, from: data)
-                completion(RecordingsResult(recordings: serviceResponse.hits,
-                                            error: nil,
-                                            currentPage: page))
+                PageCounter.currentPage = page
+                completion(serviceResponse.hits)
             } catch {
-                debugPrint(error.localizedDescription)
                 fireErrorCompletion(error)
+                debugPrint(error.localizedDescription)
+                return
             }
         }
     }

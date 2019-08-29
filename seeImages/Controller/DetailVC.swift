@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class DetailVC: UIViewController {
     
@@ -46,20 +47,22 @@ class DetailVC: UIViewController {
             let placeholder = UIImage(named: AppImages.Placeholder)
             let options: KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
             detailImage.kf.indicatorType = .activity
-            //TODO: need to fix with realm
-            detailImage.kf.setImage(with: url, placeholder: placeholder, options: options) { (result) in
+            detailImage.kf.setImage(with: url, placeholder: placeholder, options: options) { (_) in
                 if self.image.date == nil {
-                    let currentDateTime = Date()
-                    let formatter = DateFormatter()
-                    formatter.timeStyle = .medium
-                    formatter.dateStyle = .long
-                    self.image.date = formatter.string(from: currentDateTime)
+                    StorageManager.saveDowloadingDate(image)
                 }
-                
                 self.navigationItem.leftBarButtonItem?.title = ""
-                self.navigationItem.title = self.image.date
+                self.navigationItem.title = self.formattedDate(image: image)
             }
         }
+    }
+    
+    private func formattedDate(image: Image) -> String {
+        guard let currentDateTime = image.date else { return "" }
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        return formatter.string(from: currentDateTime)
     }
 }
 
