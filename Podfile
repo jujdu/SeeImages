@@ -10,5 +10,6 @@ target 'seeImages' do
   # Pods for seeImages
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'RealmSwift'
 
 end

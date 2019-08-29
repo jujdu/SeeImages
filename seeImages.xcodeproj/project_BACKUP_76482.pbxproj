@@ -37,6 +37,9 @@
 		6F5FA5162316A29E0046EF99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F5FA5192316A29E0046EF99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F5FA51B2316A29E0046EF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		6F5FA53F2316A5BB0046EF99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = seeImages/.gitignore; sourceTree = "<group>"; };
+=======
 		6F5FA53F2316A5BB0046EF99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6F5FA5462316A8550046EF99 /* HomeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCell.swift; sourceTree = "<group>"; };
 		6F5FA5472316A8550046EF99 /* HomeImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeImageCell.xib; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		6F5FA5592316D2220046EF99 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		6F5FA55F23171A390046EF99 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6F5FA56123180E310046EF99 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+>>>>>>> realm
 		C452591C38D2D24B0F9E891C /* Pods-seeImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seeImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seeImages/Pods-seeImages.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
