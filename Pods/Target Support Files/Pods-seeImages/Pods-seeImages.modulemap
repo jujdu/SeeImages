@@ -1,6 +1,0 @@
-framework module Pods_seeImages {
-  umbrella header "Pods-seeImages-umbrella.h"
-
-  export *
-  module * { export * }
-}
