@@ -3,7 +3,7 @@
 A test application for a Junior iOS Developer vacancy. The app that can download and show pictures endless from an open API with free images, and fetch metadata of images as well.
 Moreover it must show these images when an iPhone doesn't have a network connection. Also need to safe date when an image is cached, and show this date.
 To make it here, uses some libraries like so:
-1) Realm to keep fetch data in DB.
+1) Realm to keep fetched data in DB.
 2) Alamofire to work with network.
 3) Kingfisher to work with images.
 
