@@ -26,7 +26,7 @@
 		6F5FA5162316A29E0046EF99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F5FA5192316A29E0046EF99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F5FA51B2316A29E0046EF99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6F5FA53F2316A5BB0046EF99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6F5FA53F2316A5BB0046EF99 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = seeImages/.gitignore; sourceTree = "<group>"; };
 		C452591C38D2D24B0F9E891C /* Pods-seeImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seeImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seeImages/Pods-seeImages.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				6F5FA50E2316A29B0046EF99 /* seeImages */,
+				6F5FA53F2316A5BB0046EF99 /* .gitignore */,
 				6F5FA50D2316A29B0046EF99 /* Products */,
 				77C4F31DCBE26CE3567E2553 /* Pods */,
 				064B48948F3785CFE22E0DEE /* Frameworks */,
@@ -77,7 +78,6 @@
 				6F5FA5162316A29E0046EF99 /* Assets.xcassets */,
 				6F5FA5182316A29E0046EF99 /* LaunchScreen.storyboard */,
 				6F5FA51B2316A29E0046EF99 /* Info.plist */,
-				6F5FA53F2316A5BB0046EF99 /* .gitignore */,
 			);
 			path = seeImages;
 			sourceTree = "<group>";
