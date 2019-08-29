@@ -10,6 +10,9 @@ import Foundation
 import Alamofire
 
 class ServiceResponseAPI {
+    
+    static let shared = ServiceResponseAPI()
+    
     func getImages(page: Int, completion: @escaping ServiceResponseCompletion) {
 
         func fireErrorCompletion(_ error: Error?) {

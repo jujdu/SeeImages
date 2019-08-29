@@ -11,7 +11,7 @@ import RealmSwift
 class ServiceResponse: Object, Decodable {
     @objc dynamic var totalHits: Int = 0
     @objc dynamic var total: Int = 0
-    var hits = List<Image>()
+    var hits = List<Hit>()
     
     private enum CodingKeys: String, CodingKey {
         case totalHits
@@ -19,16 +19,12 @@ class ServiceResponse: Object, Decodable {
         case hits
     }
     
-    override static func primaryKey() -> String? {
-        return "totalHits"
-    }
-    
     public required convenience init(from decoder: Decoder) throws {
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.totalHits = try container.decode(Int.self, forKey: .totalHits)
         self.total = try container.decode(Int.self, forKey: .total)
-        let decodeHits = try container.decodeIfPresent([Image].self, forKey: .hits) ?? [Image()]
+        let decodeHits = try container.decodeIfPresent([Hit].self, forKey: .hits) ?? [Hit()]
         hits.append(objectsIn: decodeHits)
     }
 }

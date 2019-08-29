@@ -12,15 +12,17 @@ let realm = try! Realm()
 
 class StorageManager {
     
-    static func saveImages(_ image: List<Image>) {
+    static let shared = StorageManager()
+    
+    func saveImages(_ hits: List<Hit>) {
         try! realm.write {
-            realm.add(image, update: .modified)
+            realm.add(hits, update: .modified)
         }
     }
     
-    static func saveDowloadingDate(_ image: Image) {
+    func saveDowloadingDate(_ hit: Hit) {
         try! realm.write {
-            image.date = Date()
+            hit.date = Date()
         }
     }
 

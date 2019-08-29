@@ -11,39 +11,41 @@ import Kingfisher
 
 class HomeImageCell: UICollectionViewCell {
 
-    @IBOutlet weak var homeImg: UIImageView!
+    //IBOutlets
+    @IBOutlet weak var homeImgView: UIImageView!
     @IBOutlet weak var homeWightHeighLbl: UILabel!
     @IBOutlet weak var homeSizeLbl: UILabel!
+    @IBOutlet weak var homeTypeLbl: UILabel!
+    
+    //Properties
+    private var storageManager = StorageManager.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    func setupView(image: Image) {
-        homeWightHeighLbl.text = "\(image.imageHeight) x \(image.imageWidth)"
         
-//        guard let size = homeSizeLbl.text else { return }
-        //TODO: need fix
-//        let bytesToMegabytes = ByteCountFormatter.string(fromByteCount: Int64(size)!,
-//                                                         countStyle: .file)
-        homeSizeLbl.text = String(image.imageSize)
+    func setupView(hit: Hit) {
+        homeWightHeighLbl.text = "\(hit.imageHeight) x \(hit.imageWidth)"
         
-        if let url = URL(string: image.previewURL) {
-            let placeholder = UIImage(named: AppImages.Placeholder)
-            let options: KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.2))]
-            homeImg.kf.indicatorType = .activity
+        let bytesToMb = Units(bytes: hit.imageSize).getStringFromUnits()
+        homeSizeLbl.text = bytesToMb
+        
+        if let url = URL(string: hit.largeImageURL) {
+            let fileExtension = url.pathExtension.uppercased()
+            homeTypeLbl.text = fileExtension
             
-            homeImg.kf.setImage(with: url, placeholder: placeholder, options: options)
-//            homeImg.kf.setImage(with: url, placeholder: placeholder, options: options) { (result) in
-//                let currentDateTime = Date()
-//
-//                let formatter = DateFormatter()
-//                formatter.timeStyle = .medium
-//                formatter.dateStyle = .long
-//
-//                formatter.string(from: currentDateTime)
-//            }
+            let placeholder = UIImage(named: AppImages.Placeholder)
+            let options: KingfisherOptionsInfo = [.transition(.fade(0.2)),
+                                                  .processor(DownsamplingImageProcessor(size: homeImgView.frame.size)),
+                                                  .scaleFactor(UIScreen.main.scale),
+                                                  .cacheOriginalImage]
+            homeImgView.kf.indicatorType = .activity
+            homeImgView.kf.setImage(with: url, placeholder: placeholder, options: options) { (_) in
+                if hit.date == nil {
+                    self.storageManager.saveDowloadingDate(hit)
+                }
+            }
         }
     }
 

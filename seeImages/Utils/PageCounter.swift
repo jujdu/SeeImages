@@ -1,5 +1,5 @@
 //
-//  RecordingsResult.swift
+//  PageCounter.swift
 //  seeImages
 //
 //  Created by Michael Sidoruk on 28/08/2019.
