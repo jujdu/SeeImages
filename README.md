@@ -1,7 +1,7 @@
 # See Images 
 
 A test application for a Junior iOS Developer vacancy. The app that can download and show pictures endless from an open API with free images, and fetch metadata of images as well.
-Moreover it must show these images when an iPhone doesn't have a network connection. Also need to safe date when an image is cached, and show this date.
+Moreover it must show these images when an iPhone doesn't have a network connection. Also need to safe date when an image is cached, and show this date. When click on cell it openes detailVC with a high resolution image and image's cache date. The image can be zoomed in or out by double tap or pinches.
 To make it here, uses some libraries like so:
 1) Realm to keep fetched data in DB.
 2) Alamofire to work with network.
